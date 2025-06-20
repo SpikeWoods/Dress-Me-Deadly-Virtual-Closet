@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dress Me Deadly - Closet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='closet.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+</head>
+<body>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="{{ url_for('login') }}">Login Page</a></li>
+            <li><a href="{{ url_for('closet') }}">Dashboard</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <audio id="whisper" src="{{ url_for('static', filename='audio/whisper-fluisteren-212192.mp3') }}" preload="auto"></audio>
+
+    <audio id="creak" src="{{ url_for('static', filename='audio/closet-creak.mp3') }}" preload="auto"></audio>
+
+    <audio id="heelsSound" src="{{ url_for('static', filename='audio/walking-in-heels-95578.mp3') }}" preload="auto"></audio>
+
+
+    <div id="dashboard">
+        <h1>💘DRESS ME DEADLY💘</h1>
+        <p class="tagline">Your secrets.Your style.Behind velvet doors.</p>
+
+        <div class="closet-section">
+            <h2>👗 Dresses</h2>
+            <div class="closet-shelf" id="dresses">
+                <div class="closet-item" data-id="dress1">
+                    <img src="{{url_for('static', filename='images/summer 1.jpg') }}" alt="Dress 1">
+                    <p class="price">R899</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="dress2">
+                    <img src="{{url_for('static', filename='images/summer 2.jpg') }}" alt="Dress 2">
+                    <p class="price">R950</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="dress3">
+                    <img src="{{url_for('static', filename='images/summer 3.jpg') }}" alt="Dress 3">
+                    <p class="price">R750</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="dress4">
+                    <img src="{{url_for('static', filename='images/summer 4.jpg') }}" alt="Dress 4">
+                    <p class="price">R650</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="dress5">
+                    <img src="{{url_for('static', filename='images/summer 5.jpg') }}" alt="Dress 5">
+                    <p class="price">R700</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="dress6">
+                    <img src="{{url_for('static', filename='images/summer 6.jpg') }}" alt="Dress 6">
+                    <p class="price">R450</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div> 
+            </div>
+        </div>
+
+        <div class="closet-section">
+            <h2>👖👕Denim Outfit</h2>
+            <div class="closet-shelf" id="denim outfit">
+                <div class="closet-item" data-id="outfit1">
+                    <img src="{{url_for('static', filename='images/fit 1.jpg') }}" alt="Outfit 1">
+                    <p class="price">R899</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit2">
+                    <img src="{{url_for('static', filename='images/fit 2.jpg') }}"   alt="Outfit 2">
+                    <p class="price">R860</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit3">
+                    <img src="{{url_for('static', filename='images/fit 3.jpg') }}"  alt="Outfit 3">
+                    <p class="price">R753</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit4">
+                    <img src= "{{url_for('static', filename='images/fit 4.jpg') }}" alt="Outfit 4">
+                    <p class="price">R950</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit5">
+                    <img src="{{url_for('static', filename='images/fit 5.jpg') }}"  alt="Outfit 5">
+                    <p class="price">R650</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit6">
+                    <img src="{{url_for('static', filename='images/fit 6.jpg') }}"  alt="Outfit 6">
+                    <p class="price">R586</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit7">
+                    <img src="{{url_for('static', filename='images/fit 7.jpg') }}"  alt="Outfit 7">
+                    <p class="price">R780</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit8">
+                    <img src="{{url_for('static', filename='images/fit 8.jpg') }}"  alt="Outfit 8">
+                    <p class="price">R650</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="outfit9">
+                    <img src="{{url_for('static', filename='images/fit 9.jpg') }}"  alt="Outfit 9">
+                    <p class="price">R550</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="closet-section">
+            <h2>👠 Shoes</h2>
+            <div class="closet-shelf" id="shoes">
+                <div class="closet-item" data-id="shoe1">
+                    <img src="{{url_for('static', filename='images/black boots.jpg') }}"  alt="Shoe 1">
+                    <p class="price">R1200</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="shoe2">
+                    <img src="{{url_for('static', filename='images/Blue shoes.jpg') }}"  alt="Shoe 2">
+                    <p class="price">R2200</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="shoe3">
+                    <img src="{{url_for('static', filename='images/min min.jpg') }}"  alt="Shoe 3">
+                    <p class="price">R950</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="shoe1">
+                    <img src="{{url_for('static', filename='images/orange shoes.jpg') }}"  alt="Shoe 4">
+                    <p class="price">R750</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="shoe5">
+                    <img src="{{url_for('static', filename='images/red flower shoes.jpg') }}"  alt="Shoe 5">
+                    <p class="price">R4500</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="shoe6">
+                    <img src="{{url_for('static', filename='images/D black shoes.jpg') }}"  alt="Shoe 6">
+                    <p class="price">R3500</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="shoe7">
+                    <img src="{{url_for('static', filename='white shoes.jpg') }}"  alt="Shoe 7">
+                    <p class="price">R1500</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="closet-section">
+            <h2>👟Sneakers</h2>
+            <div class="closet-shelf" id="sneakers">
+                <div class="closet-item" data-id="sneaker1">
+                    <img src="{{url_for('static', filename='sneaker 1.jpg') }}"  alt="Sneaker 1">
+                    <p class="price">R2500</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>   
+                </div>
+                 <div class="closet-item" data-id="sneaker2">
+                    <img src="{{url_for('static', filename='images/sneaker 2.jpg') }}"  alt="Sneaker 2">
+                    <p class="price">R1999</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>   
+                </div>
+                 <div class="closet-item" data-id="sneaker3">
+                    <img src="{{url_for('static', filename='images/sneaker 3.jpg') }}"  alt="Sneaker 3">
+                    <p class="price">R2500</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>   
+                </div>
+                 <div class="closet-item" data-id="sneaker4">
+                    <img src="{{url_for('static', filename='images/sneaker 4.jpg') }}" alt="Sneaker 4">
+                    <p class="price">R1500</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>   
+                </div>
+                 <div class="closet-item" data-id="sneaker5">
+                    <img src="{{url_for('static', filename='images/sneaker 5.jpg') }}" alt="Sneaker 5">
+                    <p class="price">R1799</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>   
+                </div>
+                 <div class="closet-item" data-id="sneaker6">
+                    <img src="{{url_for('static', filename='images/sneaker 6.jpg') }}" alt="Sneaker 6">
+                    <p class="price">R2200</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>   
+                </div>
+            </div>
+        </div>
+
+        <div class="closet-section">
+            <h2>💍 Jewelry</h2>
+            <div class="closet-shelf" id="jewelry">
+                <div class="closet-item" data-id="jewel1">
+                    <img src="{{url_for('static', filename='images/Jewelry 1.jpg') }}" alt="Jewelry 1">
+                    <p class="price">R300</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="jewel2">
+                    <img src="{{url_for('static', filename='images/Jewelry 2.jpg') }}" alt="Jewelry 2">
+                    <p class="price">R400</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="jewel3">
+                    <img src="{{url_for('static', filename='images/Jewelry 3.jpg') }}" alt="Jewelry 3">
+                    <p class="price">R250</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="jewel4">
+                    <img src="{{url_for('static', filename='images/Jewelry 4.jpg') }}" alt="Jewelry 4">
+                    <p class="price">R350</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="jewel5">
+                    <img src="{{url_for('static', filename='images/Jewelry 5.jpg') }}" alt="Jewelry 5">
+                    <p class="price">R255</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                <div class="closet-item" data-id="jewel6">
+                    <img src="{{url_for('static', filename='images/Jewelry 6.jpg') }}" alt="Jewelry 6">
+                    <p class="price">R350</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div> 
+            </div>
+        </div>
+
+        <div class="closet-section">
+            <h2>👜Bags</h2>
+            <div class="closet-shelf" id="bags">
+                <div class="closet-item" data-id="bag1">
+                    <img src="{{url_for('static', filename='images/bag 1.jpg') }}" alt="Bag 1">
+                    <p class="price">R170</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                 <div class="closet-item" data-id="bag2">
+                    <img src="{{url_for('static', filename='images/bag 2.jpg') }}" alt="Bag 2">
+                    <p class="price">R250</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                 <div class="closet-item" data-id="bag3">
+                    <img src="{{url_for('static', filename='images/bag 3.jpg') }}" alt="Bag 3">
+                    <p class="price">R300</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                 <div class="closet-item" data-id="bag4">
+                    <img src="{{url_for('static', filename='images/bag 4.jpg') }}" alt="Bag 4">
+                    <p class="price">R350</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                 <div class="closet-item" data-id="bag5">
+                    <img src="{{url_for('static', filename='images/bag 5.jpg') }}" alt="Bag 5">
+                    <p class="price">R250</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+                 <div class="closet-item" data-id="bag6">
+                    <img src="{{url_for('static', filename='images/bag 6.jpg') }}" alt="Bag 6">
+                    <p class="price">R300</p>
+                    <button class="cta-button">Snatch This Look</button>
+                    <button class="fav-btn">❤</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+     <div id="toast" class="toast">✨That look is yours, Hun🔥</div>
+    
+    <script src="{{ url_for('static', filename='closet-script.js') }}"></script>
+
+</body>
+
+</html>

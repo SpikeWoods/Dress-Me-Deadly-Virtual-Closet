@@ -1,0 +1,231 @@
+.top-nav {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(210, 158, 100, 0.2);
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav ul li a {
+    color: #d29e64;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    transition:  color 0.3s ease;
+}
+
+.top-nav ul li a:hover {
+    color: #fff;
+}
+
+body {
+    background-color: #0e0d0d;
+    color: #f2ede7;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#dashboard {
+    padding-top: 80px;
+    padding: 10px;
+}
+
+#dashboard::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:
+        radial-gradient(circle at calc(var(--mouse-x, 0.5) * 100%) calc(var(--mouse-y, 0.5) * 100%),
+      rgba(200, 10, 255, 0.1), transparent 70%) ,
+        radial-gradient(circle at 70% 60%, rgba(180, 90, 255, 0.07), transparent 60%),
+      #0e0d0d;
+    z-index: -1;
+    opacity: 1;
+    pointer-events: none;
+    animation: fogMove 30s linear infinite;
+}
+
+@keyframes fogMove {
+    0% {
+        background-position: 0 0, 0 0 , 0 0;
+    }
+    100% {
+        background-position: 2000px 1600px, 1500px 2000px, 0 0;
+    }
+}
+
+#dashboard::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.05) 30%,
+        transparent 60%
+    );
+    animation: shimmer 6s infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #d29e64;
+    margin-bottom: 0;
+}
+
+.tagline {
+    text-align: center;
+    font-style: italic;
+    margin-top: 0;
+    color: #bfae9f;
+}
+
+.closet-section {
+    margin-bottom: 40px;
+}
+
+.closet-section h2 {
+    font-size: 1.8rem;
+    color: #f2ede7;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px #d29e64;
+}
+
+.closet-shelf {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.closet-shelf::-webkit-scrollbar {
+    height: 8px;
+}
+
+.closet-shelf::-webkit-scrollbar-thumb {
+    background: #d29e64;
+    border-radius: 4px;
+}
+
+.closet-shelf::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.closet-item {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 10px;
+    width: 180px;
+    flex-shrink: 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(210, 158, 100, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.closet-item:hover {
+    transform: scale(1.05);
+}
+
+.closet-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 0.9rem;
+    color: #d29e64;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.cta-btn {
+    background-color: #d29e64;
+    color: #0e0d0d;
+    border: none;
+    padding: 6px 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 6px;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #b37c41;
+}
+
+.fav-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #d29e64;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.fav-btn.favorited {
+    color: red;
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: linear-gradient(135deg, #d29e64, #ffefcc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 4px 10px rgba(210, 158, 100, 0.4),
+                0 0 20px rgba(255, 223, 150, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+    background-size: 200% 200%;
+    animation: sparkleGradient 4s ease infinite;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+@keyframes sparkleGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

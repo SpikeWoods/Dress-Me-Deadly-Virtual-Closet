@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DRESS ME DEADLY - Login</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='login.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+</head>
+<body>
+    <div class="login-container">
+        <div class="closet" id="doorAnimation">
+            <img src="{{url_for('static', filename='images/door-right-side.png') }}" class="door left-door" id="leftDoor">
+            <img src="{{url_for('static', filename='images/door-right-side.png') }}" class="door right-door" id="rightDoor">
+        </div>
+        <div class="login-box">
+            <h1>💘DRESS ME DEADLY💘</h1>
+            <p class="tagline">Your secrets. Your style. Behind velvet doors.</p>
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+
+            <button id="loginBtn">Enter Closet</button>
+        </div>
+    </div>
+
+    <auto id="whisperSound" src="{{url_for('static', filename='audio/whisper-fluisteren-212192.mp3' )}}" preload="auto"></auto>
+     <auto id="doorSound" src="{{url_for('static', filename='audio/closet-creak.mp3' )}}" preload="auto"></auto>
+
+    <script src="{{ url_for('static', filename='login-script.js') }}"></script>
+
+</body>
+</html>
